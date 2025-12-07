@@ -1,146 +1,97 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Quarterly Earnings — Interactive Presentation</title>
+  <meta charset="utf-8" />
+  <title>Quarterly Earnings Presentation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Reveal.js from CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/black.css" id="theme">
+  <!-- Reveal theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css">
 
-  <!-- Highlight.js default style (Reveal plugin will load highlight.js) -->
+  <!-- Syntax Highlighting theme -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
-
-  <style>
-    /* Minor custom styling */
-    .email { font-size: 0.9rem; opacity: 0.9; }
-    .big-number { font-size: 2.6rem; font-weight: 700; }
-  </style>
 </head>
-<body>
 
+<body>
   <div class="reveal">
     <div class="slides">
 
-      <!-- Title slide -->
+      <!-- Title -->
       <section>
         <h1>Quarterly Earnings Report</h1>
-        <p class="email">Contact: 23f3004115@ds.study.iitm.ac.in</p>
-        <p>Technical Consulting — Q4</p>
+        <p>Contact: 23f3004115@ds.study.iitm.ac.in</p>
         <aside class="notes">
-          Welcome stakeholders. Quick introduction: data sources, agenda, and expected outcomes.
+          Introduce agenda and main performance themes.
         </aside>
       </section>
 
-      <!-- Markdown slide (using data-markdown) -->
+      <!-- Markdown slide -->
       <section data-markdown>
-        <script type="text/template">
+        <textarea data-template>
 ## Executive Summary (Markdown)
 
 - Revenue: **$X.YM**
 - YoY Growth: **Z%**
-- Key drivers:
-  1. Product A adoption
-  2. Cost optimization
-  3. FX tailwinds
+- Profitability improving steadily.
 
-> Note: This slide is authored in **Markdown** and will render as HTML.
-        </script>
-        <aside class="notes">
-          Use this slide to summarize the headline metrics. Keep it short and point to deeper slides below.
-        </aside>
+> Markdown slide rendered automatically.
+        </textarea>
       </section>
 
-      <!-- Slide with fragments (animated elements) -->
+      <!-- Fragment animation -->
       <section>
         <h2>Highlights</h2>
         <ul>
-          <li class="fragment">Gross margin improved by <strong>200 bps</strong></li>
-          <li class="fragment">Operating costs down <strong>5%</strong></li>
-          <li class="fragment">Customer churn reduced to <strong>1.2%</strong></li>
+          <li class="fragment">200 bps margin improvement</li>
+          <li class="fragment">5% operational cost reduction</li>
+          <li class="fragment">Churn down to 1.2%</li>
         </ul>
         <aside class="notes">
-          Reveal each point with a click to discuss causes and actions.
+          Speak through each point one-by-one.
         </aside>
       </section>
 
-      <!-- Slide with code sample + syntax highlighting -->
+      <!-- Code highlighting -->
       <section>
-        <h2>Sample: Financial Calculation (Python)</h2>
+        <h2>Financial Script Example</h2>
         <pre><code class="language-python">
-# Simple NPV calculation example
 def npv(rate, cashflows):
-    total = 0.0
-    for i, cf in enumerate(cashflows, start=1):
-        total += cf / ((1 + rate) ** i)
-    return total
+    return sum(cf / ((1 + rate) ** i) for i, cf in enumerate(cashflows, 1))
 
-cashflows = [100, 200, 300]
-print("NPV @ 8%:", npv(0.08, cashflows))
+print(npv(0.08, [100, 200, 300]))
         </code></pre>
-        <aside class="notes">
-          Show how we modeled future cash flows; keep this high-level for non-technical stakeholders.
-        </aside>
       </section>
 
-      <!-- Slide with inline math (MathJax) -->
+      <!-- Math -->
       <section>
-        <h2>Key Formulae</h2>
-        <p>Net Present Value (NPV):</p>
-        <p class="fragment">\( \mathrm{NPV} = \sum_{t=1}^N \dfrac{CF_t}{(1+r)^t} \)</p>
-        <p class="fragment">Weighted Average Cost of Capital (WACC):</p>
-        <p class="fragment">\( \mathrm{WACC} = \dfrac{E}{D+E} \cdot r_e + \dfrac{D}{D+E} \cdot r_d \cdot (1 - t_c) \)</p>
-        <aside class="notes">
-          Explain discount rate choices and assumptions. Offer to send a sensitivity table if requested.
-        </aside>
-      </section>
-
-      <!-- Slide with a large number shown progressively -->
-      <section>
-        <h2>Revenue Waterfall</h2>
-        <p class="big-number fragment">Base: $100M</p>
-        <p class="fragment">+ New product: +$15M</p>
-        <p class="fragment">+ Price adjustments: +$5M</p>
-        <p class="fragment">- Attrition: -$3M</p>
-        <p class="fragment"><strong>Final: $117M</strong></p>
-        <aside class="notes">
-          Step through each fragment to show contribution to final revenue.
-        </aside>
-      </section>
-
-      <!-- Closing slide -->
-      <section>
-        <h2>Questions & Next Steps</h2>
-        <p>Contact: 23f3004115@ds.study.iitm.ac.in</p>
-        <aside class="notes">
-          Invite feedback and set timeline for follow-ups. Mention that a PDF export will be shared.
-        </aside>
+        <h2>Financial Equations</h2>
+        <p>\[
+          \text{NPV} = \sum_{t=1}^{N} \frac{CF_t}{(1+r)^t}
+        \]</p>
+        <p class="fragment">\[
+          \text{WACC} = \frac{E}{D+E} r_e + \frac{D}{D+E} r_d (1 - t_c)
+        \]</p>
       </section>
 
     </div>
   </div>
 
-  <!-- Reveal.js and plugins -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/markdown/markdown.esm.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/notes/notes.esm.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/highlight/highlight.esm.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/math/math.esm.js"></script>
+  <!-- RevealJS (module version) -->
+  <script type="module">
+    import Reveal from "https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.esm.js";
+    import Markdown from "https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.esm.js";
+    import Highlight from "https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.esm.js";
+    import Notes from "https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.esm.js";
+    import MathJax from "https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.esm.js";
 
-  <script>
-    // Reveal initialization
     Reveal.initialize({
       hash: true,
-      plugins: [ RevealMarkdown, RevealNotes, RevealHighlight, RevealMath ],
-      math: {
-        // MathJax config (uses CDN)
-        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js'
-      },
-      // optional: fragment animations timing
-      fragmentInURL: true
+      plugins: [Markdown, Highlight, Notes, MathJax],
+      mathjax3: {
+        mathjax: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      }
     });
   </script>
-
 </body>
 </html>
